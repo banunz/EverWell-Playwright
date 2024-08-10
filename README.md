@@ -41,6 +41,50 @@ Cypress or Playwright vs. Selenium When compared to Selenium, I have chosen Cypr
 
 # Exercise One : UI End-To-End Automation Framework
 
+###structure
+
+├───tests
+│   ├───e2e
+│   │   ├───appointment
+│   │   │       addappointment.spec.js
+│   │   │       checkconflick.spec.js
+│   │   │       deleteappointment.spec.js
+│   │   │       displayappointment.spec.js
+│   │   │       editappointment.spec.js
+│   │   │       saveappointment.spec.js
+│   │   │
+│   │   ├───calendar
+│   │   │       filtercalandar.spec.js
+│   │   │       viewcalendar.spec.js
+│   │   │
+│   │   ├───emailnotification
+│   │   │       addappointmentemail.spec.js
+│   │   │       deleteappointmentemail.spec.js
+│   │   │       editappointmentemail.spec.js
+│   │   │
+│   │   └───login
+│   │           forgotmypassword.spec.js
+│   │           login.spec.js
+│   │           logout.spec.js
+│   │           signup.spec.js
+│   │
+│   ├───fixture
+│   │       Lead Test Automation Engineer - Technical Exercise.pdf
+│   │
+│   ├───model
+│   │       appointment.page.js
+│   │       home.page.js
+│   │       login.page.js
+│   │
+│   └───support
+├───playwright-report
+│       index.html
+│
+├───test-results
+│       .last-run.json
+
+
+
 # Exercise Two : Addressing Test Automation Challenges
 ### Flaky Test: Root Cause Analysis and Stabilization Strategies
 #### Root Cause Analysis:

@@ -19,8 +19,7 @@ I assume that the environment is stable and that the team can integrate automate
 - User Expertise:
 The users of the test automation framework (engineers) have varying levels of experience with test automation, so the framework should be easy to use and well-documented.
 
-# Technology Choices
-## Test Automation Tool:
+# Technology Choices: Test Automation Tool:
 
 - ### Primary Choice: Playwright.
 Reason:The choice of technology for this application would be Playwright due to its ability to directly communicate with browsers, eliminating the need for an intermediary WebDriver, as required by Selenium. This direct interaction allows Playwright to automatically wait for elements to be available, reducing the risk of flaky tests and eliminating the need for manual synchronization. Additionally, Playwright offers robust cross-browser support, including Chromium, Firefox, and WebKit, enabling comprehensive testing across multiple environments. It also handles complex scenarios, such as multi-tab browsing and advanced interactions, more effectively than both Selenium and Cypress, making it the optimal choice for this application.

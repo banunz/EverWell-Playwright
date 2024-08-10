@@ -44,6 +44,79 @@ Configuration Management:
 # Exercise One : UI End-To-End Automation Framework
 
 # Exercise Two : Addressing Test Automation Challenges
+### Flaky Test: Root Cause Analysis and Stabilization Strategies
+#### Root Cause Analysis:
+Flaky tests can erode confidence in the test automation suite. To address them effectively, it's essential to investigate and identify patterns that cause instability. Common culprits include timing issues, dependencies on external systems, and unstable environments.
+
+### Strategies for Stabilizing Flaky Tests
+#### Strategy 1: Retries
+
+Playwright supports test retries. When enabled, failing tests will be retried multiple times until they pass, or until the maximum number of retries is reached. By default, failing tests are not retried.
+```
+ Give failing tests 3 retry attempts
+npx playwright test --retries=3
+```
+
+#### Strategy 2: Serial Mode
+
+Use test.describe.serial() to group dependent tests to ensure they always run together and in order. If one of the tests fails, all subsequent tests are skipped. All tests in the group are retried together.
+
+#### Strategy 3: SlowMo
+
+Using slowMo: 200 inside playwright.config.js can help stabilize tests by slowing down execution. Reducing the number of workers can also help. Initially using 4 workers may cause tests to run too quickly before elements are fully loaded, leading to flakiness. Adjusting to 2 workers and setting slowMo: 50 has resulted in faster, more reliable test runs.
+
+```sh
+module.exports = defineConfig({
+  use: {
+    launchOptions: {
+      slowMo: 200,
+    }
+  }
+});
+```
+#### Strategy 4: Pick Good Selectors
+
+When an application changes, the locators used to identify elements often change as well. Combat this by using strongly consistent element attributes, such as data-cy or data-test-id.
+```sh
+<button
+  data-test-id={`test-actions-${testId}`}
+/>
+```
+
+#### Strategy 5: "Wait Until" Checkpoints
+
+Write application-specific logic to ensure the application is in a specific state before proceeding. For instance, if you need to wait for a calculation to complete, you might write:
+```sh
+await page.waitForSelector('[aria-label="calculation"] text=29.76');
+```
+
+#### Strategy 6: Iterative Loops
+
+Use loops to run tests multiple times, which can help identify flaky behavior. For example:
+```sh
+cypress._.times(20, (k) => {
+  // Test case logic here
+});
+
+for (let k = 0; k <= 10; k++) {
+  it(`Test case ${k}`, () => {
+    // Test case logic here
+  });
+}
+```
+
+#### Strategy 7: Command Sequencing
+
+Avoid executing commands like click() and type() simultaneously as they may fail if executed asynchronously. Ensure one command is completed and asserted before proceeding to the next.
+
+####  Conclusion: Can We Eliminate Flaky Tests Forever?
+No.
+
+An engineering team can be proactive and significantly reduce the time spent maintaining end-to-end tests by applying these strategies. However, as long as an application is actively developed, the time required for test maintenance will never be zero.
+
+Test automation helps ensure that QA efforts are focused on new feature development, rather than endlessly covering existing features with every application change.
+Conclusion
+By following the above strategies, the MyBookings test automation framework will be robust, scalable, and easy to maintain. The framework will not only empower the engineering team to deliver quality software quickly but also ensure that the automated tests remain reliable and trustworthy over time.
 
 Conclusion
 By following the above strategies, the MyBookings test automation framework will be robust, scalable, and easy to maintain. The framework will not only empower the engineering team to deliver quality software quickly but also ensure that the automated tests remain reliable and trustworthy over time.

@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+import config from './config';
 
 /**
  * Read environment variables from file.
@@ -11,6 +12,7 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -30,7 +32,10 @@ module.exports = defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
-
+  // @ts-ignore
+  env: {
+    config
+  },
   /* Configure projects for major browsers */
   projects: [
     {

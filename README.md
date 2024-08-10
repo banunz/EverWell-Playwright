@@ -35,7 +35,6 @@ Cypress or Playwright vs. Selenium When compared to Selenium, I have chosen Cypr
 # Architecture:
 
 - Page Object Model (POM): Using POM to encapsulate the page structure and interactions will make tests more readable and easier to maintain.
-Configuration Management:
 
 - Design: The modular test automation framework is organized into distinct layers: Fixtures for managing static and mock data, Support for custom commands and utility functions, Plugins for integrating third-party tools and custom configurations, Downloads for handling files generated during test execution, and Reports for generating and managing test execution reports. This separation ensures scalability, maintainability, and a clear structure for the framework.
 

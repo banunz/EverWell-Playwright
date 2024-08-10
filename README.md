@@ -13,11 +13,11 @@ In this scenario, my goal is to develop a test automation framework for the MyBo
 
 # Assumptions
 ## 1. Test Automation Framework: 
-    I assume the application has a well-defined frontend (React) and backend (.NET 6+), making it suitable for modern test automation tools like Cypress or Playwright.
+I assume the application has a well-defined frontend (React) and backend (.NET 6+), making it suitable for modern test automation tools like Cypress or Playwright.
 ## 2. Test Environment: 
-    I assume that the environment is stable and that the team can integrate automated tests into a CI/CD pipeline.
+I assume that the environment is stable and that the team can integrate automated tests into a CI/CD pipeline.
 ## 3. User Expertise:
-    The users of the test automation framework (engineers) have varying levels of experience with test automation, so the framework should be easy to use and well-documented.
+The users of the test automation framework (engineers) have varying levels of experience with test automation, so the framework should be easy to use and well-documented.
 
 # Technology Choices
 ## Test Automation Tool:

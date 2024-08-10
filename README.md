@@ -114,9 +114,8 @@ No.
 An engineering team can be proactive and significantly reduce the time spent maintaining end-to-end tests by applying these strategies. However, as long as an application is actively developed, the time required for test maintenance will never be zero.
 
 Test automation helps ensure that QA efforts are focused on new feature development, rather than endlessly covering existing features with every application change.
-Conclusion
+
+#### Conclusion
 By following the above strategies, the MyBookings test automation framework will be robust, scalable, and easy to maintain. The framework will not only empower the engineering team to deliver quality software quickly but also ensure that the automated tests remain reliable and trustworthy over time.
 
-Conclusion
-By following the above strategies, the MyBookings test automation framework will be robust, scalable, and easy to maintain. The framework will not only empower the engineering team to deliver quality software quickly but also ensure that the automated tests remain reliable and trustworthy over time.
 

@@ -41,9 +41,8 @@ Cypress or Playwright vs. Selenium When compared to Selenium, I have chosen Cypr
 
 # Exercise One : UI End-To-End Automation Framework
 
-###structure
+### Structure
 ```
-
 ├───tests
 │   ├───e2e
 │   │   ├───appointment
@@ -83,6 +82,11 @@ Cypress or Playwright vs. Selenium When compared to Selenium, I have chosen Cypr
 │
 ├───test-results
 │       .last-run.json
+│   config.js
+│   package-lock.json
+│   package.json
+│   playwright.config.js
+│   README.md
 
 ```
 

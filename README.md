@@ -12,11 +12,11 @@ AngularJS-powered HTML5 Markdown editor.
 In this scenario, my goal is to develop a test automation framework for the MyBookings web application that will enable the engineering team to deliver high-quality software quickly and confidently. This involves making informed technology choices, designing a scalable architecture, implementing the framework, and educating the team on its use.
 
 # Assumptions
-## 1. Test Automation Framework: 
+- Test Automation Framework: 
 I assume the application has a well-defined frontend (React) and backend (.NET 6+), making it suitable for modern test automation tools like Cypress or Playwright.
-## 2. Test Environment: 
+- Test Environment: 
 I assume that the environment is stable and that the team can integrate automated tests into a CI/CD pipeline.
-## 3. User Expertise:
+- User Expertise:
 The users of the test automation framework (engineers) have varying levels of experience with test automation, so the framework should be easy to use and well-documented.
 
 # Technology Choices

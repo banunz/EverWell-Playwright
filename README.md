@@ -42,6 +42,7 @@ Cypress or Playwright vs. Selenium When compared to Selenium, I have chosen Cypr
 # Exercise One : UI End-To-End Automation Framework
 
 ###structure
+```
 
 ├───tests
 │   ├───e2e
@@ -83,7 +84,7 @@ Cypress or Playwright vs. Selenium When compared to Selenium, I have chosen Cypr
 ├───test-results
 │       .last-run.json
 
-
+```
 
 # Exercise Two : Addressing Test Automation Challenges
 ### Flaky Test: Root Cause Analysis and Stabilization Strategies

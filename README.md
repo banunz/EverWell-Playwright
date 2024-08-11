@@ -89,6 +89,78 @@ Cypress or Playwright vs. Selenium When compared to Selenium, I have chosen Cypr
 │   README.md
 
 ```
+Sample pseudocode for your reference. Please refer to the above folder for more pseudocode.
+
+Folder Structure:
+tests -> model -> login.page.js
+
+```sh
+class LoginPage {
+    constructor(page) {
+        this.page = page;
+    }
+
+    // Define elements using Playwright locators
+    get elements() {
+        return {
+            usernameInput: this.page.locator('input#username'),
+            passwordInput: this.page.locator('input#password'),
+            loginButton: this.page.locator('button#login'),
+            loggedInIndicator: this.page.locator('selector-for-logged-in-indicator'),
+        };
+    }
+
+    // Navigate to the login page
+    async goto() {
+        await this.page.goto('https://mybookingcalendar.com/login');
+    }
+    
+    // Perform login action
+    async login(username, password) {
+        await this.elements.usernameInput.fill(username);
+        await this.elements.passwordInput.fill(password);
+        await this.elements.loginButton.click();
+    }
+
+    // Verify if the user is logged in
+    async isLoggedIn() {
+        return await this.elements.loggedInIndicator.isVisible();
+    }
+}
+
+module.exports = { LoginPage };
+```
+Folder Structure:
+tests -> e2e -> login.spec.js
+
+```sh
+test('should login successfully with valid credentials', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.goto();
+    await loginPage.login('username', 'password');
+    expect(await loginPage.isLoggedIn()).toBeTruthy();
+});
+```
+
+To run the code
+
+```sh
+"scripts": {
+    "test": "npx playwright test",
+    "report": "npx playwright show-report",
+    "ui": "npx playwright test --ui",
+    "headed": "npx playwright test --headed",
+    "test:dev": "set ENV=dev&& npx playwright test",
+    "test:test": "set ENV=test&& npx playwright test"
+  },
+  ```
+
+To download the sourcecode
+
+```
+In the command prompt
+git clone https://github.com/banunz/MyBookings.git
+```
 
 # Exercise Two : Addressing Test Automation Challenges
 ### Flaky Test: Root Cause Analysis and Stabilization Strategies
